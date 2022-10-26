@@ -1,7 +1,94 @@
 .list {
-  height: 100vh;
+  height: 93vh;
   width: 100%;
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+li {
+  width: 600px;
+  height: 80px;
+  list-style: none;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  -webkit-box-shadow: 1px 1px 1px 1px  #bcbcbc;
+          box-shadow: 1px 1px 1px 1px  #bcbcbc;
+}
+
+.left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left .icon {
+  margin-left: 20px;
+}
+
+.left .category {
+  margin-left: 20px;
+}
+
+.left .category .expenselist {
+  font-size: x-large;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #191919;
+}
+
+.left .category .description {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: small;
+  color: #989daa;
+}
+
+.right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: x-large;
+}
+
+.right .money {
+  margin-right: 30px;
+}
+
+.right .cancel {
+  margin-right: 10px;
+}
+
+.right .edit {
+  margin-right: 20px;
+}
+
+.right .edit button {
+  background-color: #ddecfd;
+  border: 0;
+  border-radius: 10px;
+}
+
+.right .edit button i {
+  color: #388be4;
 }
 /*# sourceMappingURL=list.component.css.map */

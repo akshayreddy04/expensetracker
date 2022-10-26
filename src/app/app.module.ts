@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AddbuttonComponent } from './addbutton/addbutton.component';
 import { ListComponent } from './list/list.component';
+import { FormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -12,11 +14,14 @@ import { ListComponent } from './list/list.component';
     NavbarComponent,
     AddbuttonComponent,
     ListComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
+
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

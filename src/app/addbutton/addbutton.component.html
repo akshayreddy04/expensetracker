@@ -1,23 +1,44 @@
 
-<div class="floatingButtonWrap">
-    <div class="floatingButtonInner">
-        <a href="#" class="floatingButton" (click)="addoptions()" style="text-decoration: none;">
-            +
-            <i class="fa fa-plus icon-default"></i>
-        </a>
+<!-- Button trigger modal -->
+<button type="button" (click)="showmodal=true && categories=true" class="btn btn-primary addbtn" data-toggle="modal" data-target="#exampleModalCenter">
+  +
+</button>
+
+<!-- Modal -->
+<div [ngClass]="{'show':showmodal}" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">categories</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="close()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf="categories" class="categories d-flex flex-column justify-content-center align-items-center">
+         <div ><button *ngFor="let value of categoriesvalue" (click)="addorremovevalue(value)"  [ngClass]="{'changecolor':findvalue(value) ===true}">{{value}}</button></div>
+        </div>
+        <div  *ngIf="savebutton"  class="date d-flex flex-column justify-content-center align-items-center">
+          <div *ngFor="let value of selected;let i=index" class="credentials">
+            <div class="categoryname d-flex justify-content-center">
+              {{value}}
+          </div>
+          <div class="categorydata">
+            <div class="description"><input type="text" name="description" placeholder="Description" [(ngModel)]="listobjarray[i].description"></div>
+            <div class="date"><input type="date" name="date" [(ngModel)]="listobjarray[i].datevar"></div>
+            <div class="money"><input  type="number" name="money" [(ngModel)]="listobjarray[i].moneyspent"></div>
+            <div class="time"><input type="time" [(ngModel)]="listobjarray[i].time"></div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">Close</button>
+        <button *ngIf="categories" type="button" class="btn btn-primary" (click)="date()">Next</button>
+        <button type="button" class="btn btn-primary" *ngIf="categories===false"(click)="save()">Save</button>
+      </div>
     </div>
+  </div>
 </div>
-<div *ngIf="addbutton" class="categories d-flex flex-column justify-content-center align-items-center">
-  <h1>categories</h1>
-  <button (click)="date($event)" style="background-color: rgb(255,144,102);" value="Restaurant & Cafe">Restaurant & Cafe</button>
-  <button (click)="date($event)" style="background-color: rgb(109,50,254);" value=" Clothes & Shoping">Clothes & Shoping</button>
-  <button (click)="date($event)" style="background-color: rgb(13,182,131);" value="Credit & Loans">Credit & Loans</button>
-  <button (click)="date($event)" style="background-color: rgb(232,187,114);" value="Giftcards">Giftcards</button>
-</div>
-<div *ngIf="categories" class="date d-flex flex-column justify-content-center align-items-center">
-  <label for="spentmoney"><h1>Date</h1></label>
-  <input type="date" name="date">
-  <label for="Money"><h1>Money Spent</h1></label>
-  <input type="text" name="money">
-  <button>Save</button>
-</div>
+

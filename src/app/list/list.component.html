@@ -1,3 +1,42 @@
-<div class="list">
-  {{categorieslist}}
+<div class="list" >
+ <ul  >
+  <li *ngFor="let expenselist of categorieslist" [class]="getColor(expenselist.category)">
+
+
+    <div class="left">
+      <div class="icon">
+        <i class=findicon({{expenselist.category}})></i>
+      </div>
+      <div class="category">
+        <div class="expenselist">
+          {{expenselist.category}}
+        </div>
+
+        <div class="description">
+          {{expenselist.description}}
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="right">
+      <div class="money">
+       - {{expenselist.moneyspent}}
+      </div>
+      <div class="edit">
+        <button><i class="fa-regular fa-pen-to-square"></i></button>
+
+      </div>
+      <div class="cancel">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+
+    </div>
+
+
+  </li>
+ </ul>
 </div>
+

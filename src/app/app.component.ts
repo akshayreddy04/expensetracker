@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { listobject } from 'src/Utils/Types';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +8,18 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'expensetracker';
-  categorieslist:Array<string>=[];
-
+  expenselist:Array<listobject>=[];
+  hideli:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addevent(categories:any){
-    this.categorieslist=categories;
+  addevent(expenseList:any){
+    this.expenselist=expenseList;
+  }
+  hide(hideli:any){
+    this.hideli=hideli;
+
   }
 }

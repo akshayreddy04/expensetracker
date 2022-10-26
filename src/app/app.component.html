@@ -1,4 +1,4 @@
 <app-navbar></app-navbar>
-<app-list [categorieslist]="categorieslist"></app-list>
-<app-addbutton (addevent)="addevent($event)" ></app-addbutton>
+<app-list *ngIf="!hideli" [categorieslist]="expenselist"></app-list>
+<app-addbutton (addEvent)="addevent($event)" (hide)="hide($event)"></app-addbutton>
 
