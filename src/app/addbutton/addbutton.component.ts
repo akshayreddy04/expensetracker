@@ -19,7 +19,7 @@ export class AddbuttonComponent implements OnInit {
   color:string='';
   selected:string[]=[];
   listobjarray:listobject[]=[];
-  categoriesvalue:string[]=['Food','Clothing','Fruits','Shopping','Transpotation','Home','Travel','Wine','Bills','Gift','Education','Telephone','baby','Sport','Tax','Electronics','Health','Entertainment','Car','social','Insuarance','Office'];
+  categoriesvalue:string[]=['Food','Clothing','Fruits','Shopping','Transpotation','Home','Travel','Wine','Bills','Gift','Education','Telephone','Baby','Sport','Tax','Electronics','Health','Entertainment','Car','Social','Insuarance','Office'];
   @Output() hide=new EventEmitter<boolean>();
   listobject:listobject = {
     category:'',
